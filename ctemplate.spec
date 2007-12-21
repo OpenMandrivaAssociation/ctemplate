@@ -13,6 +13,7 @@ Source:		http://google-ctemplate.googlecode.com/files/%{name}-%{version}.tar.gz
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	autoconf2.5
+Buildroot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 The ctemplate package contains a library implementing a simple but
