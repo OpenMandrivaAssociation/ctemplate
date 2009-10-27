@@ -4,7 +4,7 @@
 
 Summary:	Simple but powerful template language for C++
 Name:		ctemplate
-Version:	0.94
+Version:	0.96
 Release:	%mkrel 1
 Group:		System/Libraries
 License:	BSD
@@ -87,10 +87,10 @@ rm -rf %{buildroot}%{_docdir}/ctemplate-*
 
 %files -n %{develname}
 %defattr(-,root,root)
+%{_includedir}/ctemplate/*
 %{_bindir}/diff_tpl_auto_escape
 %{_bindir}/make_tpl_varnames_h
 %{_bindir}/template-converter
-%{_includedir}/google/*.h
 %{_libdir}/*.so
 %{_libdir}/*.a
 %{_libdir}/*.la
