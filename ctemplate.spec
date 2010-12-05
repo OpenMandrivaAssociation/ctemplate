@@ -5,7 +5,7 @@
 Summary:	Simple but powerful template language for C++
 Name:		ctemplate
 Version:	0.96
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		System/Libraries
 License:	BSD
 URL:		http://code.google.com/p/google-ctemplate/
