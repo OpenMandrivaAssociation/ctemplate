@@ -4,15 +4,15 @@
 
 Summary:	Simple but powerful template language for C++
 Name:		ctemplate
-Version:	0.96
-Release:	%mkrel 2
+Version:	1.0
+Release:	%mkrel 1
 Group:		System/Libraries
 License:	BSD
 URL:		http://code.google.com/p/google-ctemplate/
 Source:		http://google-ctemplate.googlecode.com/files/%{name}-%{version}.tar.gz
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
-BuildRequires:	autoconf2.5
+BuildRequires:	autoconf
 Buildroot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
@@ -53,13 +53,12 @@ files for developing applications that use the ctemplate package.
 
 %build
 export PTHREAD_LIBS="-lpthread"
-
 %configure2_5x
 
 %make
 
-#%%check
-#make check <- borked atm
+%check
+make check
 
 %install
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
@@ -94,3 +93,4 @@ rm -rf %{buildroot}%{_docdir}/ctemplate-*
 %{_libdir}/*.so
 %{_libdir}/*.a
 %{_libdir}/*.la
+%{_libdir}/pkgconfig/*.pc
