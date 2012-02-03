@@ -5,15 +5,14 @@
 Summary:	Simple but powerful template language for C++
 Name:		ctemplate
 Version:	1.0
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		System/Libraries
 License:	BSD
 URL:		http://code.google.com/p/google-ctemplate/
-Source:		http://google-ctemplate.googlecode.com/files/%{name}-%{version}.tar.gz
+Source0:		http://google-ctemplate.googlecode.com/files/%{name}-%{version}.tar.gz
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	autoconf
-Buildroot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 The ctemplate package contains a library implementing a simple but
@@ -53,7 +52,7 @@ files for developing applications that use the ctemplate package.
 
 %build
 export PTHREAD_LIBS="-lpthread"
-%configure2_5x
+%configure2_5x -enable-static=no
 
 %make
 
@@ -68,17 +67,6 @@ make check
 # cleanup
 rm -rf %{buildroot}%{_docdir}/ctemplate-*
 
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
-
-%clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
-
 %files -n %{libname}
 %defattr(-,root,root)
 %doc AUTHORS COPYING ChangeLog INSTALL README doc/*
@@ -91,6 +79,6 @@ rm -rf %{buildroot}%{_docdir}/ctemplate-*
 %{_bindir}/make_tpl_varnames_h
 %{_bindir}/template-converter
 %{_libdir}/*.so
-%{_libdir}/*.a
-%{_libdir}/*.la
+#%{_libdir}/*.a
+#%{_libdir}/*.la
 %{_libdir}/pkgconfig/*.pc
