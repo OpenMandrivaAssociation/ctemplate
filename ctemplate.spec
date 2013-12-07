@@ -4,7 +4,7 @@
 
 Name:		ctemplate
 Version:	2.2
-Release:	4
+Release:	5
 Summary:	Simple but powerful template language for C++
 Group:		System/Libraries
 License:	BSD
