@@ -1,15 +1,15 @@
-%define	major 2
+%define	major 3
 %define	libname %mklibname ctemplate %{major}
 %define	develname %mklibname ctemplate -d
 
 Name:		ctemplate
-Version:	2.2
-Release:	9
+Version:	2.3
+Release:	1
 Summary:	Simple but powerful template language for C++
 Group:		System/Libraries
 License:	BSD
 URL:		https://code.google.com/p/ctemplate/
-Source0:	https://ctemplate.googlecode.com/files/%{name}-%{version}.tar.gz
+Source0:	https://ctemplate.googlecode.com/files/%{name}-%{name}-%{version}.tar.gz
 
 %description
 The ctemplate package contains a library implementing a simple but
@@ -42,7 +42,7 @@ The ctemplate-devel package contains static and debug libraries and header
 files for developing applications that use the ctemplate package.
 
 %prep
-%setup -q
+%setup -qn %{name}-%{name}-%{version}
 find . -name *.py -exec sed -i 's/env python/env python2/' {} \;
 %build
 export PTHREAD_LIBS="-lpthread"
