@@ -4,12 +4,14 @@
 
 Name:		ctemplate
 Version:	2.3
-Release:	2
+Release:	3
 Summary:	Simple but powerful template language for C++
 Group:		System/Libraries
 License:	BSD
 URL:		https://code.google.com/p/ctemplate/
 Source0:	https://ctemplate.googlecode.com/files/%{name}-%{name}-%{version}.tar.gz
+BuildRequires:	python2
+BuildRequires:	make
 
 %description
 The ctemplate package contains a library implementing a simple but
