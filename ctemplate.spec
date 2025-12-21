@@ -10,6 +10,10 @@ Group:		System/Libraries
 License:	BSD
 URL:		https://code.google.com/p/ctemplate/
 Source0:	https://ctemplate.googlecode.com/files/%{name}-%{name}-%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
 BuildRequires:	python2
 BuildRequires:	make
 
